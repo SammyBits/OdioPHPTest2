@@ -14,7 +14,10 @@
         html {
             background-color: #272727;
             color: #fff;
-
+            font-family: Arial, sans-serif;
+            margin: 10;
+            padding: 10;
+            color: white;
         }
 
         form {
@@ -29,12 +32,54 @@
             color: #fff;
         }
 
-        input[type="text"] {
+        input[type="text"],
+        input[type="number"],
+        input[type="submit"] {
             margin-right: 10px;
+            
+            padding: 5px;
+            border: none;
+            border-radius: 3px;
+            background-color: #444;
+            color: #fff;
         }
 
         input[type="submit"] {
             margin-top: 10px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #333;
+        }
+
+        .empleados {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: white;
+
+        }
+
+        .empleado {
+            background-color: #444;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            flex-basis: calc(33.333% - 20px);
+        }
+
+        .empleado h3 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        .empleado p {
+            margin: 5px 0;
+        }
+
+        .form-content{
+           height: 50px;
         }
     </style>
 
@@ -97,13 +142,21 @@
     ?>
 
     <h2>Crear nuevo empleado</h2>
-    <form action="./services/createEmpleado.php" method="post">
-        <input type="text" name="nombre" placeholder="nombre">
-        <input type="text" name="apellido" placeholder="apellido">
-        <input type="text" name="puesto" placeholder="puesto">
-        <input type="number" name="salario" placeholder="salario">
-        <input type="submit" name="submit" value="submit">
-    </form>
+    <div class="form-content">
+        <form action="./services/createEmpleado.php" method="post">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" placeholder="nombre">
+            <label for="apellido">Apellido</label>
+            <input type="text" name="apellido" placeholder="apellido">
+            <label for="puesto">Puesto</label>
+            <input type="text" name="puesto" placeholder="puesto">
+            <label for="salario">Salario</label>
+            <input type="number" name="salario" placeholder="salario">
+            
+            <input type="submit" name="submit" value="submit">
+        </form>
+    </div>
+
 
     <h2>Empleados existentes</h2>
     <div class="empleados">
