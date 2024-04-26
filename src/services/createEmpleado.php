@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 $sql = "";
 if (isset($_POST['submit'])) {
     $nombre = $_POST['nombre'];
-    $apelido = $_POST['apellido'];
+    $apellido = $_POST['apellido'];
     $puesto = $_POST['puesto'];
     $salario = $_POST['salario'];
 
